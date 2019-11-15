@@ -1,9 +1,26 @@
 import React from 'react'
 
-const App = () => {
-  return (
-    <h1>React development has begun!</h1>
-  )
+class App extends React.Component {
+constructor(props) {
+  super(props)
+  this.state = {
+
+  }
+}
+
+componentDidMount() {
+
+
+}
+
+
+
+  render() {
+    return (
+      <h1>React develophuehfhsvoment has begun!</h1>
+      
+    )
+  }
 }
 
 export default App

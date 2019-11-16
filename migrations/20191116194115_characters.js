@@ -10,6 +10,8 @@ exports.up = (knex, promise) => {
       table.string('likes')
       table.string('dislikes')
       table.string('fightingStyle')
+      table.string('story')
+      table.string('personality')
   })
 
 };  

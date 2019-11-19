@@ -7,7 +7,7 @@ exports.seed = (knex, promise) => {
       return knex('characters').insert([
         {CharacterId: 1, 
           characterName: 'Akuma', 
-          pP: 'qq', 
+          pP: 'https://res.cloudinary.com/warmtoast/image/upload/v1574155247/akuma-hex_h0d2qx.jpg', 
           origin: 'Unkown (presumably Japan)', 
           bloodType: 'Uknown', 
           height: 178, 
@@ -20,7 +20,7 @@ exports.seed = (knex, promise) => {
 
         {CharacterId: 2, 
           characterName: 'Alex', 
-          pP: 'qq', 
+          pP: 'https://res.cloudinary.com/warmtoast/image/upload/v1574155247/makoto-hex_po4y3y.jpg', 
           origin: 'America', 
           bloodType: 'O', 
           height: 195, 
@@ -33,7 +33,7 @@ exports.seed = (knex, promise) => {
 
         {CharacterId: 3, 
           characterName: 'Ibuki', 
-          pP: 'qq', 
+          pP: 'https://res.cloudinary.com/warmtoast/image/upload/v1574155246/alex-hex_nx8wh7.jpg', 
           origin: 'Japan', 
           bloodType: 'Unkown', 
           height: 162, 
@@ -46,7 +46,7 @@ exports.seed = (knex, promise) => {
 
         {CharacterId: 4, 
           characterName: 'Makoto', 
-          pP: 'qq', 
+          pP: 'https://res.cloudinary.com/warmtoast/image/upload/v1574155246/ibuki-hex_hzyfh1.jpg', 
           origin: 'Japan', 
           bloodType: 'Unkown', 
           height: 154, 

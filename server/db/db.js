@@ -10,6 +10,13 @@ function getCharacters(db = connection) {
   // })
 }
 
+function getChar(characterId, db = connection) {
+  return db('characters')
+  .where('characterId', characterId)
+  .first()
+}
+
 module.exports = {
-  getCharacters
+  getCharacters,
+  getChar
 }

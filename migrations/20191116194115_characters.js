@@ -3,6 +3,7 @@ exports.up = (knex, promise) => {
       table.increments('characterId').primary()
       table.string('characterName')
       table.string('pP')
+      table.string('gif')
       table.string('origin')
       table.string('bloodType')
       table.integer('height')

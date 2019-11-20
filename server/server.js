@@ -10,7 +10,7 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
 server.use('/api/v1/characters', characters)
-// server.use('/v1/moves', moves)
+// server.use('/api/v1/moves', moves)
 
 
 module.exports = server

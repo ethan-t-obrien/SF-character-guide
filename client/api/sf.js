@@ -10,3 +10,12 @@ export function getCharacters () {
       throw Error ('You need to implement an API route for /v1/characters')
     })
 }
+
+export function getChar (characterId) {
+  return request
+    .get(sfUrl + characterId)
+    .then(res => res.body)
+    .catch(() => {
+      throw Error ('You need to implement an API route for /v1/characters')
+    })
+}

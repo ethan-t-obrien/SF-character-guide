@@ -14,5 +14,15 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/:id', (req, res) => {
+  db.getChar(req.params.id)
+      .then(character => {
+          res.send(character)
+      })
+      .catch(err => {
+          res.status(500).send(err.message)
+      })
+})
+
 
 module.exports = router

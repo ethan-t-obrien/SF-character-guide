@@ -7,7 +7,8 @@ exports.seed = (knex, promise) => {
       return knex('characters').insert([
         {CharacterId: 1, 
           characterName: 'Akuma', 
-          pP: 'https://res.cloudinary.com/warmtoast/image/upload/v1574155247/akuma-hex_h0d2qx.jpg', 
+          pP: '/sfImages/akuma-hex.jpg', 
+          gif: 'https://vignette.wikia.nocookie.net/streetfighter/images/9/9d/Akuma-ts-stance.gif/revision/latest?cb=20080209053205',
           origin: 'Unkown (presumably Japan)', 
           bloodType: 'Uknown', 
           height: 178, 
@@ -20,7 +21,8 @@ exports.seed = (knex, promise) => {
 
         {CharacterId: 2, 
           characterName: 'Alex', 
-          pP: 'https://res.cloudinary.com/warmtoast/image/upload/v1574155247/makoto-hex_po4y3y.jpg', 
+          pP: '/sfImages/alex-hex.jpg', 
+          gif: 'https://vignette.wikia.nocookie.net/streetfighter/images/1/1e/Alex-ts-stance.gif/revision/latest?cb=20080324054527',
           origin: 'America', 
           bloodType: 'O', 
           height: 195, 
@@ -33,7 +35,8 @@ exports.seed = (knex, promise) => {
 
         {CharacterId: 3, 
           characterName: 'Ibuki', 
-          pP: 'https://res.cloudinary.com/warmtoast/image/upload/v1574155246/alex-hex_nx8wh7.jpg', 
+          pP: '/sfImages/ibuki-hex.jpg', 
+          gif: 'https://vignette.wikia.nocookie.net/streetfighter/images/f/fc/Ibuki-ts-stance.gif/revision/latest?cb=20080210073421',
           origin: 'Japan', 
           bloodType: 'Unkown', 
           height: 162, 
@@ -46,7 +49,8 @@ exports.seed = (knex, promise) => {
 
         {CharacterId: 4, 
           characterName: 'Makoto', 
-          pP: 'https://res.cloudinary.com/warmtoast/image/upload/v1574155246/ibuki-hex_hzyfh1.jpg', 
+          pP: '/sfImages/makoto-hex.jpg', 
+          gif: 'https://vignette.wikia.nocookie.net/streetfighter/images/5/52/Makoto-stance.gif/revision/latest?cb=20080210081748',
           origin: 'Japan', 
           bloodType: 'Unkown', 
           height: 154, 

@@ -1,54 +1,47 @@
 import React from 'react'
 import request from 'superagent'
 import { getCharacters, getChar } from '../api/sf'
+import Characters from './Characters'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      characters: [],
-      character: {}
+     
     }
-    this.getChar = this.getChar.bind(this)
+    // this.getChar = this.getChar.bind(this)
   }
 
-  componentDidMount() {
-    console.log('did mount')
+  // componentDidMount() {
+  //   console.log('did mount')
 
-    getCharacters()
-      .then(characters => {
-        this.setState({
-          characters: characters
-        })
-      })
+  //   // getCharacters()
+  //   //   .then(characters => {
+  //   //     this.setState({
+  //   //       characters: characters
+  //   //     })
+  //   //   })
 
-  }
+  // }
 
-  getChar(characterId) {
-    getChar(characterId)
-    .then(character => {
-      this.setState({
-        character: character
-      })
-    })
-  }
+  // getChar(characterId) {
+  //   getChar(characterId)
+  //   .then(character => {
+  //     this.setState({
+  //       character: character
+  //     })
+  //   })
+  // }
 
   render() {
-    const characters = this.state.characters
+    // const characters = this.state.characters
   
     return (
       <React.Fragment>
 
-        <div class="float-left">
-          {console.log(characters)}
-
-          <h1>Street Fighter 3rd Strike</h1>
-          <ul>{!this.state.character.characterName && characters.map(character => {
-           return <li key={character.characterId}>{character.characterName} {character.characterId} <button onClick={() => this.getChar(character.characterId)}><img class='pP' src={character.pP}/></button></li>
-          })}</ul>
-          </div>
+      <Characters />
           
-          <div>
+          {/* <div>
 
             <ul>
           {this.state.character.characterName && (
@@ -75,7 +68,7 @@ class App extends React.Component {
           
           }
           </ul>
-          </div>
+          </div> */}
           
         
       </React.Fragment>

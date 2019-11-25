@@ -15,7 +15,6 @@ export function fetchCharacters (characters) {
   return (dispatch) => {
     getCharacters(characters)
     .then(characters => {
-      console.log(characters)
       dispatch(disCharacters (characters))
     })
   }

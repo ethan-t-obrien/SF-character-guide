@@ -8,33 +8,34 @@ class Characters extends React.Component {
 constructor(props) {
   super(props)
   this.state = {
+
   }
 }
 
 
 componentDidMount() {
-  this.props.dispatch(disCharacters)
+  this.props.dispatch(fetchCharacters())
   
 }
 
 render() {
-  console.log(this.props.characters.characterName)
-    // const characters = this.props.characters
+  console.log(this.props.characters)
+    const characters = this.props.characters
   
   
   return (
     <>
-      <div class='float-left'>
+      <div className='float-left'>
 
         <h1>Street Fighter 3rd Strike</h1>
         <ul>
-          {!this.state.character.characterName &&
+          {!characters.characterName &&
             characters.map(character => {
               return (
                 <li key={character.characterId}>
                   {character.characterName} {character.characterId}{' '}
                   <button onClick={() => this.getChar(character.characterId)}>
-                    <img class='pP' src={character.pP} />
+                    <img className='pP' src={character.pP} />
                   </button>
                 </li>
               )

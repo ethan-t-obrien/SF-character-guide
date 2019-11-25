@@ -12,17 +12,17 @@ class App extends React.Component {
     // this.getChar = this.getChar.bind(this)
   }
 
-  // componentDidMount() {
-  //   console.log('did mount')
+  componentDidMount() {
+    console.log('did mount')
 
-  //   // getCharacters()
-  //   //   .then(characters => {
-  //   //     this.setState({
-  //   //       characters: characters
-  //   //     })
-  //   //   })
+    // getCharacters()
+    //   .then(characters => {
+    //     this.setState({
+    //       characters: characters
+    //     })
+    //   })
 
-  // }
+  }
 
   // getChar(characterId) {
   //   getChar(characterId)

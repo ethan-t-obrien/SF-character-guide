@@ -8,43 +8,32 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-     
+     characterList: true
     }
-    // this.getChar = this.getChar.bind(this)
   }
 
   componentDidMount() {
     console.log('did mount')
 
-    // getCharacters()
-    //   .then(characters => {
-    //     this.setState({
-    //       characters: characters
-    //     })
-    //   })
-
+  
   }
 
-  // getChar(characterId) {
-  //   getChar(characterId)
-  //   .then(character => {
-  //     this.setState({
-  //       character: character
-  //     })
-  //   })
-  // }
+  charToggle = () => {
+    this.setState({
+      characterList: !this.state.characterList
+    })
+  }
+  
 
   render() {
-    // const characters = this.prop.characters
-  
     return (
       <React.Fragment>
-
-      <Characters />
-          
-       <CharacterBio />
-          
-        
+      {this.state.characterList &&
+        <Characters func={this.charToggle}/>
+      }
+      {!this.state.characterList &&
+        <CharacterBio func={this.charToggle}/>
+      }
       </React.Fragment>
     )
   }

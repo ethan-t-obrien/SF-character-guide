@@ -191,13 +191,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -216,34 +218,32 @@ function (_React$Component) {
     _classCallCheck(this, App);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
-    _this.state = {}; // this.getChar = this.getChar.bind(this)
 
+    _defineProperty(_assertThisInitialized(_this), "charToggle", function () {
+      _this.setState({
+        characterList: !_this.state.characterList
+      });
+    });
+
+    _this.state = {
+      characterList: true
+    };
     return _this;
   }
 
   _createClass(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      console.log('did mount'); // getCharacters()
-      //   .then(characters => {
-      //     this.setState({
-      //       characters: characters
-      //     })
-      //   })
-    } // getChar(characterId) {
-    //   getChar(characterId)
-    //   .then(character => {
-    //     this.setState({
-    //       character: character
-    //     })
-    //   })
-    // }
-
+      console.log('did mount');
+    }
   }, {
     key: "render",
     value: function render() {
-      // const characters = this.prop.characters
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Characters__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CharacterBio__WEBPACK_IMPORTED_MODULE_4__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, this.state.characterList && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Characters__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        func: this.charToggle
+      }), !this.state.characterList && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CharacterBio__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        func: this.charToggle
+      }));
     }
   }]);
 
@@ -313,13 +313,16 @@ function (_React$Component) {
   _createClass(CharacterBio, [{
     key: "render",
     value: function render() {
-      var _React$createElement;
+      var _this2 = this,
+          _React$createElement;
 
       console.log(this.props.character);
       var character = this.props.character;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, character.characterName && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character.characterName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, character.characterName && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this2.props.func();
+        }
+      }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character.characterName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: character.gif
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Origin: ", character.origin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Height: ", character.height, "cm"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Weight: ", character.weight, "kg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Likes: ", character.likes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Dislikes: ", character.dislikes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Fighting Style: ", character.fightingStyle)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement = {
         "class": "container"
@@ -410,18 +413,16 @@ function (_React$Component) {
       console.log(this.props.characters);
       var characters = this.props.characters;
       console.log('hi', characters.length);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Street Fighter 3rd Strike"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "float-left"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Street Fighter 3rd Strike"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.characterList && characters.map(function (character) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.state.characterList && characters.map(function (character) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: character.characterId
         }, character.characterName, " ", character.characterId, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             _this2.props.dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_4__["fetchChar"])(character.characterId));
 
-            _this2.setState({
-              characterList: false
-            });
+            _this2.props.func();
           }
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "pP",
@@ -34372,7 +34373,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getCharacters } from '../api/sf'
 import { disCharacters, fetchCharacters, fetchChar } from '../actions'
 
@@ -20,11 +20,11 @@ class CharacterBio extends React.Component {
     return (
 
       <div>
-
         <ul>
           {character.characterName && (
             <>
-              <div class="container">
+            <button onClick={() => this.props.func()}>X</button>
+              <div >
                 <p>{character.characterName}</p>
                 <img src={character.gif} />
                 <p>Origin: {character.origin}</p>

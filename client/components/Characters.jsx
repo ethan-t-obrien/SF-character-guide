@@ -4,6 +4,7 @@ import {link} from 'react-router-dom'
 import {getCharacters} from '../api/sf'
 import { disCharacters, fetchCharacters, fetchChar } from '../actions'
 
+
 class Characters extends React.Component {
 constructor(props) {
   super(props)
@@ -25,9 +26,9 @@ render() {
   console.log('hi', characters.length)
   return (
     <>
-      <div className='float-left'>
 
         <h1>Street Fighter 3rd Strike</h1>
+      <div className='float-left'>
         <ul>
           {this.state.characterList && (
           characters.map(character => {
@@ -36,9 +37,7 @@ render() {
                   {character.characterName} {character.characterId}
                   <button onClick={() => { 
                     this.props.dispatch(fetchChar(character.characterId))
-                    this.setState({
-                      characterList : false
-                    })
+                    this.props.func()
                     }}>
                     <img className='pP' src={character.pP} />
                   </button>

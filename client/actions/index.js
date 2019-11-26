@@ -1,4 +1,4 @@
-import { getCharacters } from '../api/sf'
+import { getCharacters, getChar } from '../api/sf'
 import request from 'superagent'
 
 
@@ -9,6 +9,13 @@ export const disCharacters = (characters) => {
   }
   }
 
+  export const disCharacter = (character) => {
+    return {
+      type: 'GET_CHARACTER',
+      character: character
+    }
+    }
+
 
 
 export function fetchCharacters (characters) {
@@ -16,6 +23,15 @@ export function fetchCharacters (characters) {
     getCharacters(characters)
     .then(characters => {
       dispatch(disCharacters (characters))
+    })
+  }
+}
+
+export function fetchChar (character) {
+  return (dispatch) => {
+    getChar(character)
+    .then(character => {
+      dispatch(disCharacter (character))
     })
   }
 }

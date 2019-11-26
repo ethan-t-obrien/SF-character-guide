@@ -7,7 +7,7 @@ const db = require('../db/db')
 router.get('/', (req, res) => {
   db.getCharacters()
     .then(characters => {
-      res.send(characters)
+      res.json(characters)
     })
     .catch(err => {
       res.status(500).send(err.message)
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   db.getChar(req.params.id)
       .then(character => {
-          res.send(character)
+          res.json(character)
       })
       .catch(err => {
           res.status(500).send(err.message)

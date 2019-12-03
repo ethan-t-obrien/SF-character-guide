@@ -37,7 +37,7 @@ render() {
                   {character.characterName} {character.characterId}
                   <button onClick={() => { 
                     this.props.dispatch(fetchChar(character.characterId))
-                    this.props.dispatch(fetchMoves(character.characterId))
+                    // this.props.dispatch(fetchMoves(character.characterId))
                     this.props.func()
                     }}>
                     <img className='pP' src={character.pP} />

@@ -12,7 +12,7 @@ function getCharacters(db = connection) {
 
 function getChar(characterId, db = connection) {
   return db('characters')
-  .where('characterId', characterId).first()
+  .where('characterId', characterId)
   .join('moveList', 'characterId', 'character_id')
   .select()
 }

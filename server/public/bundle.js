@@ -90,7 +90,7 @@
 /*!*********************************!*\
   !*** ./client/actions/index.js ***!
   \*********************************/
-/*! exports provided: disCharacters, disCharacter, charMoves, fetchCharacters, fetchChar, fetchMoves */
+/*! exports provided: disCharacters, disCharacter, charMoves, fetchCharacters, fetchChar */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,7 +100,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "charMoves", function() { return charMoves; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCharacters", function() { return fetchCharacters; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchChar", function() { return fetchChar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMoves", function() { return fetchMoves; });
 /* harmony import */ var _api_sf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api/sf */ "./client/api/sf.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_1__);
@@ -137,14 +136,14 @@ function fetchChar(character) {
       dispatch(disCharacter(character));
     });
   };
-}
-function fetchMoves(id) {
-  return function (dispatch) {
-    Object(_api_sf__WEBPACK_IMPORTED_MODULE_0__["getCharMoves"])(id).then(function (moves) {
-      dispatch(charMoves(moves));
-    });
-  };
-}
+} // export function fetchMoves (id) {
+//   return (dispatch) => {
+//     getCharMoves(id)
+//     .then(moves => {
+//       dispatch(charMoves (moves))
+//     })
+//   }
+// }
 
 /***/ }),
 
@@ -344,18 +343,18 @@ function (_React$Component) {
           _React$createElement;
 
       console.log(this.props.character);
-      var character = this.props.character;
-      console.log(this.props.moves);
-      var moves = this.props.moves;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, character.characterName && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      var character = this.props.character; // console.log(this.props.moves)
+      // const moves = this.props.moves
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, character.length && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this2.props.func();
         }
-      }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character.characterName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: character.gif
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Origin: ", character.origin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Height: ", character.height, "cm"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Weight: ", character.weight, "kg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Likes: ", character.likes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Dislikes: ", character.dislikes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Fighting Style: ", character.fightingStyle)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement = {
+      }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character[0].characterName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: character[0].gif
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Origin: ", character[0].origin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Height: ", character[0].height, "cm"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Weight: ", character[0].weight, "kg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Likes: ", character[0].likes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Dislikes: ", character[0].dislikes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Fighting Style: ", character[0].fightingStyle)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement = {
         className: "container"
-      }, _defineProperty(_React$createElement, "className", "bigTexts"), _defineProperty(_React$createElement, "className", "text-center"), _React$createElement), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Story"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character.story), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Personality"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character.personality), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Moves"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, moves.map(function (move) {
+      }, _defineProperty(_React$createElement, "className", "bigTexts"), _defineProperty(_React$createElement, "className", "text-center"), _React$createElement), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Story"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character[0].story), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Personality"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character[0].personality), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Moves"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, character.map(function (move) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: move.moveId
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, move.name, " ", move.input));
@@ -369,8 +368,7 @@ function (_React$Component) {
 var mapStateToProps = function mapStateToProps(state) {
   console.log(state);
   return {
-    character: state.characterBio,
-    moves: state.moves
+    character: state.characterBio
   };
 };
 
@@ -454,9 +452,8 @@ function (_React$Component) {
           key: character.characterId
         }, character.characterName, " ", character.characterId, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
-            _this2.props.dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_4__["fetchChar"])(character.characterId));
+            _this2.props.dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_4__["fetchChar"])(character.characterId)); // this.props.dispatch(fetchMoves(character.characterId))
 
-            _this2.props.dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_4__["fetchMoves"])(character.characterId));
 
             _this2.props.func();
           }
@@ -580,42 +577,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _characters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./characters */ "./client/reducers/characters.js");
 /* harmony import */ var _characterBio__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./characterBio */ "./client/reducers/characterBio.js");
-/* harmony import */ var _moves__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./moves */ "./client/reducers/moves.js");
 
 
-
+ // import moves from './moves'
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   characters: _characters__WEBPACK_IMPORTED_MODULE_1__["default"],
-  characterBio: _characterBio__WEBPACK_IMPORTED_MODULE_2__["default"],
-  moves: _moves__WEBPACK_IMPORTED_MODULE_3__["default"]
+  characterBio: _characterBio__WEBPACK_IMPORTED_MODULE_2__["default"] // moves
+
 }));
-
-/***/ }),
-
-/***/ "./client/reducers/moves.js":
-/*!**********************************!*\
-  !*** ./client/reducers/moves.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function reducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case 'GET_MOVES':
-      return action.moves;
-
-    default:
-      return state;
-  }
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (reducer);
 
 /***/ }),
 

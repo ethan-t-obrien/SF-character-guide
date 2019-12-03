@@ -42,11 +42,11 @@ export function fetchChar (character) {
   }
 }
 
-export function fetchMoves (id) {
-  return (dispatch) => {
-    getCharMoves(id)
-    .then(moves => {
-      dispatch(charMoves (moves))
-    })
-  }
-}
+// export function fetchMoves (id) {
+//   return (dispatch) => {
+//     getCharMoves(id)
+//     .then(moves => {
+//       dispatch(charMoves (moves))
+//     })
+//   }
+// }

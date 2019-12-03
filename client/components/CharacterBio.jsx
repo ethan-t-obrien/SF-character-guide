@@ -19,33 +19,36 @@ class CharacterBio extends React.Component {
   render() {
     console.log(this.props.character)
     const character = this.props.character
-    console.log(this.props.moves)
-    const moves = this.props.moves
+    // console.log(this.props.moves)
+    // const moves = this.props.moves
     return (
 
       <div>
         <ul>
-          {character.characterName && (
+          {character.length && (
             <>
             <button onClick={() => this.props.func()}>X</button>
               <div >
-                <p>{character.characterName}</p>
-                <img src={character.gif} />
-                <p>Origin: {character.origin}</p>
-                <p>Height: {character.height}cm</p>
-                <p>Weight: {character.weight}kg</p>
-                <p>Likes: {character.likes}</p>
-                <p>Dislikes: {character.dislikes}</p>
-                <p>Fighting Style: {character.fightingStyle}</p>
+          
+                <p>{character[0].characterName}</p>
+                <img src={character[0].gif} />
+                <p>Origin: {character[0].origin}</p>
+                <p>Height: {character[0].height}cm</p>
+                <p>Weight: {character[0].weight}kg</p>
+                <p>Likes: {character[0].likes}</p>
+                <p>Dislikes: {character[0].dislikes}</p>
+                <p>Fighting Style: {character[0].fightingStyle}</p>
+
+
               </div>
               <div className="container" className='bigTexts' className="text-center">
                 <h3>Story</h3>
-                <p>{character.story}</p>
+                <p>{character[0].story}</p>
                 <h3>Personality</h3>
-                <p>{character.personality}</p>
+                <p>{character[0].personality}</p>
                 <h3>Moves</h3>
                 <ul>
-                {moves.map(move => {
+                {character.map(move => {
                   return (
                     <li key={move.moveId}>
                       <h4>{move.name} {move.input}</h4>
@@ -74,6 +77,6 @@ class CharacterBio extends React.Component {
 
 const mapStateToProps = (state) => {
   console.log(state)
-  return { character: state.characterBio, moves: state.moves }
+  return { character: state.characterBio}
 }
 export default connect(mapStateToProps)(CharacterBio)

@@ -4,6 +4,7 @@ exports.up = (knex, promise) => {
       table.increments('moveId').primary()
       table.string('name')
       table.string('input')
+      table.integer('character_id')
   })
 
 };  

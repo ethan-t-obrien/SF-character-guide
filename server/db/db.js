@@ -12,11 +12,19 @@ function getCharacters(db = connection) {
 
 function getChar(characterId, db = connection) {
   return db('characters')
-  .where('characterId', characterId)
-  .first()
+  .where('characterId', characterId).first()
+  .join('moveList', 'characterId', 'character_id')
+  .select()
+}
+
+function getCharMoves(characterId, db = connection) {
+  return db('moveList')
+  .where('character_id', characterId)
+  .select()
 }
 
 module.exports = {
   getCharacters,
-  getChar
+  getChar,
+  getCharMoves
 }

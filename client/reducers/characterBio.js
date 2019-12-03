@@ -2,7 +2,7 @@ function reducer (state = {}, action) {
   switch (action.type) {
     case 'GET_CHARACTER':
       return action.character
-      default: return state
+    default: return state
   }
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {link} from 'react-router-dom'
 import {getCharacters} from '../api/sf'
-import { disCharacters, fetchCharacters, fetchChar } from '../actions'
+import { disCharacters, fetchCharacters, fetchChar, fetchMoves } from '../actions'
 
 
 class Characters extends React.Component {
@@ -37,6 +37,7 @@ render() {
                   {character.characterName} {character.characterId}
                   <button onClick={() => { 
                     this.props.dispatch(fetchChar(character.characterId))
+                    this.props.dispatch(fetchMoves(character.characterId))
                     this.props.func()
                     }}>
                     <img className='pP' src={character.pP} />

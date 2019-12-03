@@ -18,7 +18,7 @@ exports.seed = (knex, promise) => {
         {moveId: 11, name: 'Super Art III: Messatsu-Gourasen', input: 'placeholder ', character_id: '1'},
         {moveId: 12, name: 'Super Art III: Messatsu-GouSenpuu', input: 'placeholder ', character_id: '1'},
         {moveId: 13, name: 'Max Super Art: Shungokusatsu', input: 'placeholder ', character_id: '1'},
-        {moveId: 13, name: 'Max Super Art: Kongou kokuretsuzan', input: 'placeholder ', character_id: '1'},
+        {moveId: 14, name: 'Max Super Art: Kongou kokuretsuzan', input: 'placeholder ', character_id: '1'},
       ]);
     });
 };

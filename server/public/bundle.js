@@ -326,7 +326,7 @@ function (_React$Component) {
         src: character.gif
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Origin: ", character.origin), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Height: ", character.height, "cm"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Weight: ", character.weight, "kg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Likes: ", character.likes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Dislikes: ", character.dislikes), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Fighting Style: ", character.fightingStyle)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement = {
         "class": "container"
-      }, _defineProperty(_React$createElement, "class", "bigTexts"), _defineProperty(_React$createElement, "class", "text-center"), _React$createElement), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Story"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character.story), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Personality"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character.personality), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Moves")))));
+      }, _defineProperty(_React$createElement, "class", "bigTexts"), _defineProperty(_React$createElement, "class", "text-center"), _React$createElement), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Story"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character.story), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Personality"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, character.personality), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Moves"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null)))));
     }
   }]);
 
@@ -34373,7 +34373,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

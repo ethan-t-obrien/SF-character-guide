@@ -40,6 +40,9 @@ class CharacterBio extends React.Component {
                 <h3>Personality</h3>
                 <p>{character.personality}</p>
                 <h3>Moves</h3>
+
+                <p></p>
+
               </div>
             </>
           )
